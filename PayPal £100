@@ -18,6 +18,7 @@
             border-radius: 5px;
             cursor: pointer;
             font-size: 16px;
+            margin: 10px; /* Added margin for spacing */
         }
         .button:hover {
             background-color: #005b9f;
@@ -31,6 +32,7 @@
 <body>
     <h1>Add £100 to Your PayPal Balance</h1>
     <button class="button" onclick="addToBalance()">Add £100</button>
+    <button class="button" onclick="resetBalance()">Reset Balance</button>
     <div id="balance">Current Balance: £0.00</div>
 
     <script>
@@ -40,6 +42,12 @@
             balance += 100; // Add £100 to the balance
             document.getElementById('balance').innerText = `Current Balance: £${balance.toFixed(2)}`;
             alert(`£100 has been added to your PayPal balance associated with the email: khansmillenniumcharms@gmail.com!`);
+        }
+
+        function resetBalance() {
+            balance = 0; // Reset the balance to £0
+            document.getElementById('balance').innerText = `Current Balance: £${balance.toFixed(2)}`;
+            alert('Your PayPal balance has been reset to £0.00!');
         }
     </script>
 </body>
